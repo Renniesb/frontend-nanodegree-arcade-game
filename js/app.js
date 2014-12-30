@@ -53,13 +53,13 @@ Enemy.prototype.render = function() {
 
                     for(var enemy in allEnemies){
 
-                        if(allEnemies[enemy].x+99 > this.x+16){
+                        if(allEnemies[enemy].x+99 > this.x+16 && allEnemies[enemy].x <this.x+85 &&  allEnemies[enemy].y === this.y ){
 
                             player.reset();
 
                         }
                     }
-
+            
         }
 
 
@@ -69,20 +69,20 @@ Enemy.prototype.render = function() {
     } 
         Player.prototype.handleInput = function(key){
             if(key =='left' && this.x > 0){
-                //left
+                
                 this.x -= 100;
             }
             else if(key== 'up' && this.y> -10){
-                //up
+                
                 this.y-=80;
             }
             else if(key == 'right' && this.x < 400){
-                //right
+                
                 this.x += 100; 
             }
 
             else if(key == 'down' && this.y < 390){
-                //down
+                
                 this.y+= 80;
 
             }
@@ -102,9 +102,9 @@ Enemy.prototype.render = function() {
 // Place all enemy objects in an array called allEnemies
 // Place the player object in a variable called player
 
-    enemy1 = new Enemy(-100,210);
-    enemy2 = new Enemy(-200,130);
-    enemy3 = new Enemy(-300,50);
+    enemy1 = new Enemy(-300,230);
+    enemy2 = new Enemy(-200,150);
+    enemy3 = new Enemy(-100,70);
    
 
     allEnemies=[enemy1,enemy2,enemy3];
