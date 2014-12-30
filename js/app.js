@@ -25,7 +25,7 @@ else{
     this.x=-100;
 }
 
-//return this.x+99;
+
     
 
 }
@@ -59,6 +59,11 @@ Enemy.prototype.render = function() {
 
                         }
                     }
+
+            if(this.y === -10){
+
+                player.reset();
+            }
             
         }
 
