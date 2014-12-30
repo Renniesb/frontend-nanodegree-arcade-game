@@ -1,0 +1,22 @@
+1st step maze displayed
+
+2nd step player displayed
+
+3rd step bugs displayed
+
+later handle the player. So he doesn't line step. Class for setting boundaries
+
+Then you can handle the input of the player
+
+Then work on bug speed
+
+write collisions function: if x and y coordinates match then you call reset.  Add the x position plus the bugs width. to find the nose of bug. Find x position of player. Check if player is on dangerous road. If so check if the nose of the bug is greater then the top left corner of my playa.
+
+
+
+
+
+
+
+
+143-145
