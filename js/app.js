@@ -51,9 +51,9 @@ Enemy.prototype.render = function() {
 
             
 
-                    for(var enemy in allEnemies){
+                   for(var enemy in allEnemies){
 
-                        if(allEnemies[enemy].x+99 > this.x+16 && allEnemies[enemy].x <this.x+85 &&  allEnemies[enemy].y === this.y ){
+                      if(allEnemies[enemy].x+99 > this.x+16 && allEnemies[enemy].x <this.x+85 &&  allEnemies[enemy].y === this.y ) {
 
                             player.reset();
 
@@ -107,7 +107,7 @@ Enemy.prototype.render = function() {
 // Place all enemy objects in an array called allEnemies
 // Place the player object in a variable called player
 
-    enemy1 = new Enemy(-300,230);
+    enemy1 = new Enemy(-450,230);
     enemy2 = new Enemy(-200,150);
     enemy3 = new Enemy(-100,70);
    
