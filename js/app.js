@@ -18,15 +18,15 @@ Enemy.prototype.update = function(dt) {
     // which will ensure the game runs at the same speed for
     // all computers.
    
+//conditions to advance bug 
+//and reset bug to other side of screen if it goes too far.
+
     if(this.x<505){
    this.x+=(200*dt);
 }
 else{
     this.x=-100;
-}
-
-
-    
+} 
 
 }
 
@@ -39,6 +39,8 @@ Enemy.prototype.render = function() {
 // This class requires an update(), render() and
 // a handleInput() method.
 
+
+
     var Player=function(x,y){
         this.sprite = 'images/char-boy.png';
         this.x=x;
@@ -47,18 +49,23 @@ Enemy.prototype.render = function() {
 
     }
 
+
+
         Player.prototype.update = function(){
 
             
+            //Iterating for enemies with conditions that are dangerous to my player.
+                   
+                  for(var enemy in allEnemies){
 
-                   for(var enemy in allEnemies){
+                     if(allEnemies[enemy].x+99 > this.x+16 && allEnemies[enemy].x <this.x+85 &&  allEnemies[enemy].y === this.y ) {
 
-                      if(allEnemies[enemy].x+99 > this.x+16 && allEnemies[enemy].x <this.x+85 &&  allEnemies[enemy].y === this.y ) {
+                           player.reset();
 
-                            player.reset();
+                      }
+                  }
 
-                        }
-                    }
+            //A condition to reset the player if they reach the water.
 
             if(this.y === -10){
 
@@ -72,6 +79,11 @@ Enemy.prototype.render = function() {
         Player.prototype.render = function(){
         ctx.drawImage(Resources.get(this.sprite),this.x,this.y);
     } 
+
+
+    //Set up if statements to respond to key presses 
+    //and set conditions to keep the player on the board.
+
         Player.prototype.handleInput = function(key){
             if(key =='left' && this.x > 0){
                 
@@ -96,6 +108,8 @@ Enemy.prototype.render = function() {
         }
 
         Player.prototype.reset= function(){
+
+        //resets the players position data to start back at the beginning.
 
             this.x=200;
             this.y=390;
