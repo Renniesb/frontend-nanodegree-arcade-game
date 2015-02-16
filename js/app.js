@@ -18,15 +18,15 @@ Enemy.prototype.update = function(dt) {
     // which will ensure the game runs at the same speed for
     // all computers.
    
-//conditions to advance bug 
-//and reset bug to other side of screen if it goes too far.
+    //conditions to advance bug 
+    //and reset bug to other side of screen if it goes too far.
 
-if(this.x<505){
-   this.x+=(200*dt);
-}
-else{
+    if(this.x<505){
+    this.x+=(200*dt);
+    }
+    else{
     this.x=-100;
-} 
+    } 
 
 };
 
@@ -50,26 +50,26 @@ Enemy.prototype.render = function() {
 };
 
 
-Player.prototype.update = function(){
+    Player.prototype.update = function(){
 
             
-     //Iterating for enemies with conditions that are dangerous to my player.
+        //Iterating for enemies with conditions that are dangerous to my player.
                    
-          for(var enemy in allEnemies){
+        for(var enemy in allEnemies){
 
-                     if(allEnemies[enemy].x+99 > this.x+16 && allEnemies[enemy].x <this.x+85 &&  allEnemies[enemy].y === this.y ) {
+            if(allEnemies[enemy].x+99 > this.x+16 && allEnemies[enemy].x <this.x+85 &&  allEnemies[enemy].y === this.y ) {
 
                            player.reset();
 
-                      }
-                  }
-
-            //A condition to reset the player if they reach the water.
-
-            if(this.y === -10){
-
-                player.reset();
             }
+        }
+
+        //A condition to reset the player if they reach the water.
+
+        if(this.y === -10){
+
+            player.reset();
+         }
             
         };
 
@@ -108,7 +108,7 @@ Player.prototype.update = function(){
 
         Player.prototype.reset= function(){
 
-        //resets the players position data to start back at the beginning.
+            //resets the players position data to start back at the beginning.
 
             this.x=200;
             this.y=390;
